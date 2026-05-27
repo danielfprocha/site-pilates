@@ -39,6 +39,9 @@
     /*.contato-item, .redes-item:*/
     --cor-fundo-item: #eaf3de;
 
+    /*#sec-sobre iframe*/
+    --cor-fundo-video: #EFF0EA;
+
     /*.whatsapp*/
     --cor-fundo-whatsapp: #25D366;
 
@@ -228,7 +231,7 @@ nav {
     justify-content: center;
     gap: 2rem;
     padding: 0rem 3rem;
-    background-color: var(--cor-nav-footer);
+    background-color: var(--cor-principal);
     backdrop-filter: blur(8px);
     box-shadow: var(--sombra-geral);
 }
@@ -252,7 +255,7 @@ nav a {
 }
 
 .nav-link {
-    color: var(--cor-texto-suave);
+    color: var(--cor-secundaria);
     font-family: var(--fonte-titulo);
     font-size: 1.1rem;
     transition: color 0.2s, transform 0.2s;
@@ -341,4 +344,650 @@ header img {
 
 section {
     padding: 5rem 3rem;
+}
+
+/* =============================================
+   SOBRE NÓS:
+   ============================================= */
+
+#sec-sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+#sobre-texto h2 {
+    color: var(--cor-texto-forte);
+    margin-bottom: 1rem;
+}
+
+#sobre-texto p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
+
+#sobre-fotos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#sobre-fotos img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--raio-borda-m);
+    box-shadow: var(--sombra-conteudo);
+}
+
+#sobre-video {
+    width: 100%;
+}
+
+#sobre-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: var(--raio-borda-m);
+    box-shadow: var(--sombra-conteudo);
+    background-color: var(--cor-fundo-video);
+}
+
+/* =============================================
+   PROCEDIMENTOS:
+   ============================================= */
+   
+#sec-aulas {
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: var(--raio-borda-g-top);
+    background-color: var(--cor-fundo-alternativo);
+}
+ 
+#aulas-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+ 
+#aulas-box > h2 {
+    margin-bottom: 2.5rem;
+}
+ 
+#aulas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+ 
+.aula {
+    background-color: var(--cor-fundo-div);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda-m);
+    overflow: hidden;
+    box-shadow: var(--sombra-geral);
+    display: flex;
+    flex-direction: column;
+}
+ 
+.aula img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+ 
+.aula-conteudo {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.aula .preco {
+    color: var(--cor-principal);
+    font-weight: 700;
+    text-align: right;
+}
+
+/* =============================================
+   LOCALIZAÇÃO + HORÁRIOS + CONTATOS + REDES:
+   ============================================= */
+
+#sec-localizacao {
+    background-color: var(--cor-principal);
+    padding: 5rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#localizacao-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 62fr 38fr;
+    gap: 1.5rem;
+    grid-template-areas:
+        "endereco horarios"
+        "endereco contato"
+        "redes    contato";
+    align-items: start;
+}
+
+#endereco { grid-area: endereco; }
+#horarios { grid-area: horarios; }
+#contato  { grid-area: contato; flex: 1; }
+#redes    { grid-area: redes; }
+
+/* -------------------------------------- 
+   COLUNA ESQUERDA: Localização + Redes   
+   -------------------------------------- */
+
+#coluna-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+#endereco p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+ 
+#endereco iframe {
+    width: 100%;
+    height: 340px;
+    border: none;
+    border-radius: var(--raio-borda-m);
+    box-shadow: var(--sombra-conteudo);
+    display: block;
+}
+
+#redes {
+    flex: 1;
+    background-color: var(--cor-fundo-div);
+    border-radius: var(--raio-borda-m);
+    padding: 1.5rem;
+    box-shadow: var(--sombra-conteudo);
+}
+
+#redes h2 {
+    margin-bottom: 2rem;
+}
+
+#redes-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+.redes-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: var(--raio-borda-p);
+    /*border: 1px solid var(--cor-principal);*/
+    background-color: var(--cor-secundaria);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+ 
+.redes-item:hover {
+    background-color: transparent;
+    /*border-color: var(--cor-principal);*/
+    box-shadow: var(--sombra-hover);
+    transform: scale(1.02);
+}
+ 
+.redes-item img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+ 
+.redes-item p {
+    margin: 0;
+    color: var(--cor-texto-suave);
+    font-size: 0.88rem;
+    transition: transform 0.2s;
+}
+
+.redes-item p:hover {
+    color: var(--cor-texto-forte);
+}
+
+/* -------------------------------------- 
+   COLUNA DIREITA: Horários + Contato   
+   -------------------------------------- */
+
+#coluna-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#horarios {
+    background-color: var(--cor-fundo-div);
+    /*border: 1px solid var(--cor-borda);*/
+    border-radius: var(--raio-borda-m);
+    padding: 1.75rem;
+    box-shadow: var(--sombra-conteudo);
+}
+ 
+#horarios h2 {
+    margin-bottom: 1.25rem;
+}
+ 
+#horarios h3 {
+    color: var(--cor-texto-suave);
+    font-family: var(--fonte-texto);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+    margin-top: 1.2rem;
+}
+ 
+#horarios h3:first-of-type {
+    margin-top: 0;
+}
+ 
+#horarios p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--cor-texto-forte);
+}
+
+#contato {
+    background-color: var(--cor-fundo-div);
+    /*border: 1px solid var(--cor-borda);*/
+    border-radius: var(--raio-borda-m);
+    padding: 1.75rem;
+    box-shadow: var(--sombra-conteudo);
+    flex: 1;
+}
+
+#contato h2 {
+    margin-bottom: 2rem;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: var(--raio-borda-p);
+    /*border: 1px solid var(--cor-principal);*/
+    background-color: var(--cor-secundaria);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+ 
+.contato-item:hover {
+    background-color: transparent;
+    /*border-color: var(--cor-principal);*/
+    box-shadow: var(--sombra-hover);
+    transform: scale(1.02);
+}
+ 
+.contato-item img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+ 
+.contato-item p {
+    margin: 0;
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+.contato-item p:hover {
+    color: var(--cor-texto-forte);
+}
+
+button.contato-item {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    cursor: pointer;
+    padding: 0.7rem 1rem;
+    border-radius: var(--raio-borda-p);
+    /*border: 1px solid var(--cor-principal);*/
+    background-color: var(--cor-secundaria);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-sizing: border-box;
+}
+
+button.contato-item:hover {
+    background-color: transparent;
+    /*border: 1px solid var(--cor-principal);*/
+    box-shadow: var(--sombra-hover);
+    transform: scale(1.02);
+}
+
+.contato-item:last-of-type {
+    margin-top: 18px;
+}
+
+/* =============================================
+   AVALIACOES:
+   ============================================= */
+
+#sec-avaliacoes {
+    max-width: 1100px;
+    margin: 0px auto 80px auto;
+    border-radius: var(--raio-borda-g-bottom);
+    background-color: var(--cor-secundaria);
+}
+
+#avaliacoes-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+#avaliacoes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#avaliacoes-header h2 {
+    line-height: 1.3;
+}
+
+#avaliacoes-nota {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+#nota {
+    font-family: var(--fonte-nome);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--cor-principal);
+    line-height: 1;
+    font-style: italic;
+}
+
+#estrelas {
+    color: var(--cor-principal);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+}
+
+#avaliacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.avaliacao {
+    background-color: var(--cor-fundo-div);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda-m);
+    padding: 1.5rem;
+    box-shadow: var(--sombra-conteudo);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.avaliacao-topo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.avaliacao-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--cor-secundaria);
+    border: 0.5px solid var(--cor-principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-titulo);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cor-principal);
+    flex-shrink: 0;
+}
+
+.avaliacao-autor strong {
+    display: block;
+    font-family: var(--fonte-texto);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-texto-forte);
+}
+
+.avaliacao-autor  {
+    font-size: 0.78rem;
+    color: var(--cor-texto-suave);
+}
+
+.avaliacao-estrelas {
+    color: var(--cor-principal);
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.avaliacao-texto {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    font-style: italic;
+    color: var(--cor-texto-suave);
+    margin: 0;
+}
+
+/* =============================================
+   FOOTER:
+   ============================================= */
+
+footer {
+    max-height: 200px;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-suave);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.7rem;
+    line-height: 1.8;
+    box-shadow: var(--sombra-footer);
+}
+ 
+footer p {
+    margin: 0;
+}
+
+/* =============================================
+   RESPONSIVIDADE:
+   ============================================= */
+
+@media (max-width: 968px) {
+    #historia {
+        display: none;
+    }
+} 
+
+@media (min-width: 921px) {
+    #redes-grid {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 780px) {   
+    #feedback {
+        display: none;
+    }
+}
+
+@media (max-width: 920px) {
+    #redes-grid {
+        flex-direction: column;
+        gap: 0.05rem;
+    }
+}
+
+@media (min-width: 625px) and  (max-width: 920px) {
+    .redes-item {
+        justify-content: flex-start;
+    }
+
+    #aulas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #localizacao-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "endereco horarios"
+            "contato  redes";
+        align-items: stretch;
+    }
+
+    #endereco iframe {
+        height: 180px
+    }
+
+    .contato-item,
+    .redes-item {
+        min-height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0.3rem 0.05rem;
+        gap: 0.8rem;
+        overflow-x: auto;
+    }
+ 
+    nav a, nav span {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        padding: 0.6rem 0.3rem;
+    }
+
+    nav span {
+        margin-left: 0px;
+    }
+
+    .nav-link {
+        margin: auto 0.05rem;
+    }
+
+    h1 {
+        margin-top: 1.5rem;
+
+    }
+
+    #whatsapp-header {
+        display: none;
+    }
+
+    #historia {
+        display: none;
+    }
+ 
+    section {
+        padding: 3.5rem 1.25rem;
+    }
+
+    #sobre-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    #sobre-fotos {
+        flex-direction: row;
+    }
+
+    #sobre-fotos img {
+        height: 160px;
+    }
+
+    #redes {
+        padding: 1.75rem;
+    }
+
+    #redes-item {
+        align-items: left;
+    }
+
+    #avaliacoes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #avaliacoes-header {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+
+    #avaliacoes-nota {
+        align-items: flex-end;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 624px) {
+    #procedimentos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #sec-localizacao {
+        padding: 3.5rem 1.25rem;
+        overflow: hidden;
+    }
+
+    #localizacao-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        margin: 0 auto; 
+        grid-template-areas:
+        "endereco"
+        "horarios"
+        "contato"
+        "redes";
+    }
+
+    #endereco, #horarios, #contato, #redes {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    #endereco iframe {
+        width: 100%;
+        max-width: 100%;
+        height: 260px;
+    }
+}
+
+@media (max-width: 460px) {
+    nav a:first-child {
+        display: none;
+    }
 }
