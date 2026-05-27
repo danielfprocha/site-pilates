@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+/* ============================== 
+   FONTES EXTERNAS:   
+   ============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* ============================== 
+   VARIÁVEIS:   
+   ============================== */
+
+:root {
+    /* ------------------------------ 
+        BACKGROUND AND BORDER - COLOR:   
+       ------------------------------ */
+    
+    /*nav; footer, header img border-color, #sec-sobre iframe, .aula border-color, #sec-aulas h2, #horarios h2, #contato h2, #redes h2, .preço, #sec-avaliacoes h2, #notas, #estrelas, .avaliacao border-color, .avaliacao-estrelas*/
+    --cor-principal: #4f7001;
+
+    /*.nav-link, header, #sec-aulas, .redes-item, .contato-item, #sec-avaliacoes*/
+    --cor-secundaria: #eaf3de;
+
+    /*body*/
+    --cor-fundo-site: #f2efeb;
+
+    /*#pilates*/
+    --cor-pilates: #f4ffda;
+
+    /*#sec-localizacao*/
+    --cor-fundo-primario: #f2e4e3;
+
+    /*#sec-aulas, #sec-avaliacoes*/
+    --cor-fundo-alternativo: #f4ede8;
+
+    /*#buritis, .nav-link:hover, .nav-link:active, .aula, #horarios, #contato, #redes, .avaliacao*/
+    --cor-fundo-div: #fff;
+
+    /*.contato-item, .redes-item:*/
+    --cor-fundo-item: #eaf3de;
+
+    /*.whatsapp*/
+    --cor-fundo-whatsapp: #25D366;
+
+    /* ------------------------------ 
+        TEXT - COLOR:   
+       ------------------------------ */
+
+    /*p, #horarios h3, .avaliacao-avatar border-color, .avaliacao-data, footer*/
+    --cor-texto-suave: #a79e95;
+
+    /*h1, h3, #sec-sobre h2, #horarios p, #redes-item p:hover, #redes-item p:active, #contato-item p:hover, #contato-item p:active, .avaliacao-autor*/
+    --cor-texto-forte: #000;
+
+    /*.whatsapp*/
+    --cor-texto-whatsapp: #fff;
+
+    /* ------------------------------ 
+        FONTES:   
+       ------------------------------ */
+
+    /*nav span ("Buritis")*/
+    --fonte-nome: 'Goudy Bookletter 1911', Times, serif;
+
+    /*.nav a, h1, h2*/
+    --fonte-titulo: 'DM Sans', Georgia, serif;
+
+    /*h3, p, footer*/
+    --fonte-texto: 'Inter', Arial, sans-serif;
+
+    /* ------------------------------ 
+        SOMBRAS:   
+       ------------------------------ */
+
+    /*nav, #sec-aulas, #sec-localizacao, #sec-avaliacoes*/
+    --sombra-geral: 2px 2px 16px rgba(44, 36, 22, 0.06);
+
+    /*footer*/
+    --sombra-footer: 2px -2px 16px rgba(44, 36, 22, 0.06);
+
+    /*iframe, .aula, #redes, #horarios, #contato*/
+    --sombra-conteudo: 2px 2px 16px rgba(44, 36, 22, 0.08);
+
+    /*.contato-item:hover, .rede-item:hover*/
+    --sombra-hover: 3px 2px 10px rgba(139, 111, 71, 0.12);
+
+    /*.whatsapp*/
+    --sombra-whatsapp: 2px 4px 20px rgba(13, 212, 86, 0.35);
+
+    /*.whatsapp:hover*/
+    --sombra-whatsapp-hover: 3px 6px 24px rgba(37, 211, 102, 0.45);
+
+    /* ------------------------------ 
+        RAIO BORDAS:   
+       ------------------------------ */
+
+    /*.contato-item, .rede-item*/
+    --raio-borda-p: 7px;
+
+    /*.aula, iframe, #sec-sobre img, #horarios, #contato, #redes, .avaliacao*/
+    --raio-borda-m: 15px;
+
+    /*#sec-aulas*/
+    --raio-borda-g-top: 25px 25px 0px 0px;
+
+    /*#sec-avaliacoes*/
+    --raio-borda-g-bottom: 0px 0px 25px 25px;
+}
+
+/* ============================== 
+   RESET E BASE:   
+   ============================== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo-site);
+    color: var(--cor-texto-suave);
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    line-height: 1.75;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+ 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    line-height: 1.25;
+}
+
+h1, h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-principal);
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    font-style: italic;
+    position: relative;
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto-forte);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: var(--cor-texto-suave);
+    font-family: var(--fonte-texto);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* ============================== 
+   BOTÃO WHATSAPP FIXO:   
+   ============================== */
+
+#whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--cor-fundo-whatsapp);
+    color: var(--cor-texto-whatsapp);
+    font-family: var(--fonte-texto);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    box-shadow: var(--sombra-whatsapp);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+#whatsapp-float:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-whatsapp-hover)
+}
+ 
+#whatsapp-float img {
+    width: 24px;
+    height: 24px;
+}
+
+/* =============================================
+   NAV:
+   ============================================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0rem 3rem;
+    background-color: var(--cor-nav-footer);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--sombra-geral);
+}
+
+nav a {
+    padding: 0.9rem 0.1rem;
+}
+
+#pilates-buritis {
+    font-family: var(--fonte-nome);
+    font-weight: bold;
+    font-size: 1.35rem;
+}
+
+#pilates {
+    color: var(--cor-pilates);
+}
+
+#buritis {
+    color: var(--cor-fundo-div);
+}
+
+.nav-link {
+    color: var(--cor-texto-suave);
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+    transition: color 0.2s, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: var(--cor-fundo-div);
+    transform: scale(1.03);
+}
+
+.nav-link:active {
+    color: var(--cor-fundo-div);
+}
+
+/* =============================================
+   HEADER:
+   ============================================= */
+
+header {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 1rem 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B6F47' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+}
+ 
+header img {
+    position: relative;
+    width: 88%;
+    max-width: 750px;
+    margin: 0 auto;
+    border-radius: 80%;
+    border: 1.5px solid var(--cor-principal);
+    background-color: var(--cor-secundaria);
+}
+
+#whatsapp-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 280px;
+    background-color: var(--cor-fundo-whatsapp);
+    color: var(--cor-texto-whatsapp);
+    font-family: var(--fonte-texto);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: var(--sombra-whatsapp);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    margin: 3.75rem auto 1.25rem auto
+}
+
+#whatsapp-header:hover {
+    transform: scale(1.02);
+    box-shadow: var(--sombra-whatsapp-hover);
+}
+
+#whatsapp-header img {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    border: none;
+    background: none;
+    pointer-events: none;
+}
+
+/* =============================================
+   SECTION:
+   ============================================= */
+
+section {
+    padding: 5rem 3rem;
+}
