@@ -301,7 +301,7 @@ header img {
     width: 88%;
     max-width: 750px;
     margin: 0 auto;
-    border-radius: 80%;
+    border-radius: 95%;
     border: 1.5px solid var(--cor-principal);
     background-color: var(--cor-secundaria);
 }
@@ -432,7 +432,6 @@ section {
  
 .aula {
     background-color: var(--cor-fundo-div);
-    border: 1px solid var(--cor-borda);
     border-radius: var(--raio-borda-m);
     overflow: hidden;
     box-shadow: var(--sombra-geral);
@@ -457,6 +456,14 @@ section {
 .aula .preco {
     color: var(--cor-principal);
     font-weight: 700;
+    text-align: right;
+}
+
+.tabela-coluna-esquerda {
+    text-align: left;
+}
+
+.tabela-coluna-direita {
     text-align: right;
 }
 
