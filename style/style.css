@@ -175,7 +175,7 @@ h3 {
     font-family: var(--fonte-texto);
     color: var(--cor-texto-forte);
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
@@ -503,6 +503,11 @@ section {
 #whatsapp-aula {
     align-self: flex-start;
     margin: auto;
+}
+
+.categoria {
+    color: var(--cor-texto-forte);
+    font-weight: 450;
 }
 
 /* =============================================
@@ -876,9 +881,15 @@ footer p {
    RESPONSIVIDADE:
    ============================================= */
 
-@media (max-width: 968px) {
-    #historia {
-        display: none;
+@media (max-width: 1020px) {
+    .redes-item {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1000px) {
+    #avaliacoes-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 } 
 
@@ -888,23 +899,20 @@ footer p {
     }
 }
 
-@media (max-width: 780px) {   
+@media (max-width: 520px) {   
     #feedback {
         display: none;
     }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1020px) {
     #redes-grid {
         flex-direction: column;
         gap: 0.05rem;
     }
 }
 
-@media (min-width: 625px) and  (max-width: 920px) {
-    .redes-item {
-        justify-content: flex-start;
-    }
+@media (min-width: 625px) and  (max-width: 1020px) {
 
     #aulas-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -928,6 +936,18 @@ footer p {
     }
 }
 
+@media (max-width: 830px) {
+    #avaliacoes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    #historia {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         padding: 0.3rem 0.05rem;
@@ -936,16 +956,15 @@ footer p {
     }
  
     nav a, nav span {
-        font-size: 0.9rem;
         white-space: nowrap;
-        padding: 0.6rem 0.3rem;
     }
 
-    nav span {
-        margin-left: 0px;
+    #pilates-buritis {
+        margin-right: 1.5rem;
     }
 
     .nav-link {
+        padding: 0.6rem 0.3rem;
         margin: auto 0.05rem;
     }
 
@@ -982,12 +1001,8 @@ footer p {
         padding: 1.75rem;
     }
 
-    #redes-item {
+    .redes-item {
         align-items: left;
-    }
-
-    #avaliacoes-grid {
-        grid-template-columns: 1fr;
     }
 
     #avaliacoes-header {
@@ -1002,8 +1017,12 @@ footer p {
     }
 }
 
-@media (max-width: 624px) {
-    #procedimentos-grid {
+@media (max-width: 631px) {
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    #aulas-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1036,7 +1055,17 @@ footer p {
     }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
+    #avaliacoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 380px) {
+    h1 {
+        margin-top: -1rem;
+    }
+
     nav a:first-child {
         display: none;
     }
